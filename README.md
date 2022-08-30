@@ -31,7 +31,7 @@ to complete the installation from the command line.
 
 2022 Gaspar Tessi <gtessi@flacso.org.ar>
 
-This program is free software: you can redistribute it and/or modify it under
+This program is free software and trying to understand moodle a little more: you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
 Foundation, either version 3 of the License, or (at your option) any later
 version.
