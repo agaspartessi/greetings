@@ -26,7 +26,8 @@ function local_greetings_get_greeting($user) {
  * @param navigation_node $frontpage Node representing the front page in the navigation tree.
  */
 function local_greetings_extend_navigation_frontpage(navigation_node $frontpage)
-{
+{ if (get_config('local_greetings', 'showinnavigation')) {
+    if (isloggedin() && !isguestuser()) {
     $frontpage->add(
         get_string('pluginname', 'local_greetings'),
         new moodle_url('/local/greetings/index.php'),
@@ -35,6 +36,8 @@ function local_greetings_extend_navigation_frontpage(navigation_node $frontpage)
         null,
         new pix_icon('t/message', '')
     );
+        }
+    }
 }
 
 
@@ -49,6 +52,6 @@ function local_greetings_extend_navigation(global_navigation $root)
         new pix_icon('t/message', '')
     );
 
-    $node->showinflatnavigation = true;
+    $node->showinflatnavigation = get_config('local_greetings', 'showinnavigation');
     $root->add_node($node);
 }
