@@ -110,7 +110,8 @@ foreach ($messages as $m) {
                 '/local/greetings/index.php',
                 array('action' => 'del', 'id' => $m->id, 'sesskey' => sesskey())
             ),
-            $OUTPUT->pix_icon('t/delete', '') . get_string('delete')
+            $OUTPUT->pix_icon('t/delete', '') ,
+            array('role' => 'button', 'aria-label' => get_string('delete'), 'title' => get_string('delete'))
         );
         echo html_writer::end_tag('p');
     }
